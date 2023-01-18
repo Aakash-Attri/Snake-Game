@@ -29,7 +29,8 @@ let yVelocity = 0;
 
 let score = 0;
 
-const gulpSound = new Audio("Over.mp3");
+const gulpSound = new Audio("gulp.mp3");
+const overSound = new Audio("Over.mp3");
 
 //game loop
 function drawGame() {
@@ -106,7 +107,10 @@ function isGameOver() {
 
     ctx.fillText("Game Over!", canvas.width / 6.5, canvas.height / 2);
   }
-
+  if(gameOver)
+  {
+    overSound.play();
+  }
   return gameOver;
 }
 
